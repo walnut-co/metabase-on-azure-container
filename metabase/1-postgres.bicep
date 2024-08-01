@@ -1,6 +1,13 @@
 @description('this instance name for the database')
 param flexibleServers_metabasereport_name string
 
+@description('username for the db')
+param dbUsername string
+
+@description('password for db')
+@secure()
+param dbPassword string
+
 @description('The location for the storage account')
 param location string
 
@@ -32,7 +39,8 @@ resource flexibleServers_metabasereport_name_resource 'Microsoft.DBforPostgreSQL
       passwordAuth: 'Enabled'
     }
     version: '15'
-    administratorLogin: flexibleServers_metabasereport_name
+    administratorLogin: dbUsername
+    administratorLoginPassword: dbPassword
     availabilityZone: '1'
     backup: {
       backupRetentionDays: 7
@@ -64,8 +72,7 @@ resource flexibleServers_metabasereport_name_azure_extensions 'Microsoft.DBforPo
 resource flexibleServers_metabasereport_name_require_secure_transport 'Microsoft.DBforPostgreSQL/flexibleServers/configurations@2023-12-01-preview' = {
   parent: flexibleServers_metabasereport_name_resource
   name: 'require_secure_transport'
-  properties: {
-    value: 'ON'
+  properties: {    value: 'ON'
     source: 'user-override'
   }
 }
