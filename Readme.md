@@ -1,6 +1,6 @@
 
-# How to deploy metabase instance with MS Azure 
-### Azure Postgres DB, Azure Container Apps, Docker
+# How to deploy metabase instance with MS Azure & Bicep
+### Azure Postgres DB, Azure Container Apps, Docker and Bicep
 
 **Build Bicep**
 main.bicep call 3 other bicep files including bicep for postgres database, container registry (optional) and container environment.
