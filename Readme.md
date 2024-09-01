@@ -3,6 +3,10 @@
 ### Azure Postgres DB, Azure Container Apps, Docker
 
 **Build Bicep**
+main.bicep call 3 other bicep files including bicep for postgres database, container registry (optional) and container environment.
+
+Executing the main bicep will deploy the required azure services for metabase docker and if everything right you will not need anything else and metabase instance will be operational.
+
 ```
 az bicep build --file main.bicep
 az bicep build --file main.bicep --outdir ..\.build

@@ -13,5 +13,5 @@ param containerEnvironmentName = 'your-container-environment-name'
 param containerName = 'your-docker-metabase-container-name'
 param containerIngressPort = 3000 // default port
 param metabaseImage = 'metabase/metabase:latest' // metabase image to deploy
-param metabaseCpuCores = 1
-param metabaseMemoryInGb = 2
+param metabaseCpuCores = 1 // change as per your requirements
+param metabaseMemoryInGb = 2 // change as per your requirements
